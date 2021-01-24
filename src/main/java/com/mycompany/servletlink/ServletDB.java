@@ -24,7 +24,7 @@ public class ServletDB {
     private String mdbName = null;
     private String URL_DB = null;
     private final String user = "root";
-    private final String psw = "zakurra2002";
+    private final String psw = "root";
     private String query = "";
     public ArrayList <String> buffer;
     Connection connessione = null;
