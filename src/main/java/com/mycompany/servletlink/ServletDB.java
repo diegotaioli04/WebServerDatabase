@@ -29,7 +29,7 @@ public class ServletDB {
     public ArrayList <String> buffer;
     Connection connessione = null;
     
-    private final String DRIVER = "com.mysql.jdbc.Driver"; 
+    private final String DRIVER = "com.mysql.cj.jdbc.Driver"; 
 
     public ServletDB(String name){
         this.mdbName = name;

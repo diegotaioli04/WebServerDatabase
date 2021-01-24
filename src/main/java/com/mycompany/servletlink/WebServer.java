@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -25,7 +26,7 @@ import java.util.logging.Logger;
 // Each Client Connection will be managed in a dedicated Thread
 public class WebServer implements Runnable{ 
 	
-	static final File WEB_ROOT = new File(".");
+	static final File WEB_ROOT = new File("./src/main/java/risorse");
 	static final String DEFAULT_FILE = "index.html";
 	static final String FILE_NOT_FOUND = "404.html";
         static final String MOVED = "301.html";
@@ -131,7 +132,8 @@ public class WebServer implements Runnable{
                                     fileRequested = "dbxml.xml";
                                     xmlrequest(fileRequested);
                                 }
-				file = new File(WEB_ROOT, fileRequested);
+                                file = new File(WEB_ROOT, fileRequested);
+				//file = new File(fileRequested);
 				int fileLength = (int) file.length();
 				String content = getContentType(fileRequested);
 				/*byte[] fileData = readFileData(file, fileLength);
@@ -195,10 +197,10 @@ public class WebServer implements Runnable{
 		}
 	
 	private byte[] readFileData(File file, int fileLength) throws IOException {
-		FileInputStream fileIn = null;
+		InputStream fileIn = null;
 		byte[] fileData = new byte[fileLength];	
-		try {			
-                    fileIn = new FileInputStream(file);	
+		try {	
+                    fileIn =  new FileInputStream(file);
                     fileIn.read(fileData);
 		} finally {
 			if (fileIn != null) 
