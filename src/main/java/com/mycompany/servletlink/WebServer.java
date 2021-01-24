@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 // Each Client Connection will be managed in a dedicated Thread
 public class WebServer implements Runnable{ 
 	
-	static final File WEB_ROOT = new File(".");
+	static final File WEB_ROOT = new File("../");
 	static final String DEFAULT_FILE = "index.html";
 	static final String FILE_NOT_FOUND = "404.html";
         static final String MOVED = "301.html";
