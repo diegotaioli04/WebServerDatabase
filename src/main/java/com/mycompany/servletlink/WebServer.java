@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 // Each Client Connection will be managed in a dedicated Thread
 public class WebServer implements Runnable{ 
 	
-	static final File WEB_ROOT = new File("./target/generated-sources");
+	static final File WEB_ROOT = new File(".");
 	static final String DEFAULT_FILE = "index.html";
 	static final String FILE_NOT_FOUND = "404.html";
         static final String MOVED = "301.html";
@@ -197,7 +197,7 @@ public class WebServer implements Runnable{
 		}
 	
 	private byte[] readFileData(File file, int fileLength) throws IOException {
-		InputStream fileIn = null;
+		FileInputStream fileIn = null;
 		byte[] fileData = new byte[fileLength];	
 		try {	
                     fileIn =  new FileInputStream(file);
