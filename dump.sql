@@ -18,6 +18,9 @@
 --
 -- Table structure for table `docente`
 --
+DROP DATABASE IF EXISTS `corsirecupero`;
+create database `corsirecupero`;
+use `corsirecupero`;
 
 DROP TABLE IF EXISTS `docente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
